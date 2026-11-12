@@ -35,13 +35,7 @@ menu_choice: str  # Hold the choice made by the user.
 # Extract the data from the file
 try:
     file = open(FILE_NAME, "r")
-    data = json.load(file)
-    for item in data:
-        # Transform the data from the file
-        student_data = {"FirstName": item["FirstName"], "LastName": item["LastName"], "CourseName": item[
-            "CourseName"]}
-        # Load it into our collection (list of lists)
-        students.append(student_data)
+    students = json.load(file)
 
 except FileNotFoundError as e:
     print("No existing data located. File required before running program")
